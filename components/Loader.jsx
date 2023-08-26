@@ -9,7 +9,7 @@ export default function Loader() {
       animationStyle={styles.lottie}
       speed={1}
     >
-      <Text>Loading...</Text>
+      {/* <Text>Loading...</Text> */}
     </AnimatedLoader>
   );
 }
