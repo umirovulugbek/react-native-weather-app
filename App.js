@@ -19,7 +19,7 @@ export default function App() {
     setLocation(data);
     setIsloading(false);
   };
-
+  
   const getLocation = async () => {
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();

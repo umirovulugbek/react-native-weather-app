@@ -75,6 +75,7 @@ const weatherOptions = {
 };
 
 export default function Weather({ temp, name, condition, setWeather }) {
+  const d = new Date();
   const [query, setQuery] = useState("");
   return (
     <LinearGradient
@@ -89,10 +90,14 @@ export default function Weather({ temp, name, condition, setWeather }) {
           color={"white"}
         />
         <View style={style?.flex}>
-          <Text style={style.text}>{temp}°</Text>
+          <Text style={style.text}>{temp}°C </Text>
           <Text style={style.text}>| {name}</Text>
         </View>
+        <Text style={style?.textDate}>
+          {d.getHours()}:{d?.getMinutes()}
+        </Text>
       </View>
+
       <View style={{ ...style.container, ...style.textContainer }}>
         {/* <Text
         // style={style.title}
@@ -132,6 +137,7 @@ const style = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
+    alignItems: "center",
     paddingHorizontal: 30,
   },
   text: {
@@ -145,6 +151,12 @@ const style = StyleSheet.create({
   // title: {
   //   fontSize: 44,
   // },
+  textDate: {
+    color: "white",
+    fontSize: 22,
+    justifyContent: "flex-end",
+    textAlign: "right",
+  },
   description: {
     fontSize: 20,
     color: "white",
